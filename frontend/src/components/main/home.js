@@ -305,6 +305,73 @@ const Home = () => {
             
         </section>
         <a href="/main/signup" class="inside-page__btn inside-page__btn--camping">Select Your City</a>
+        <div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_empty_space"><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="genesisexpo_module_text" >
+<h3 ><span ><b>Search Events Organisers Near You</b></span></h3>
+</div>  
+<div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1573475673363">
+		
+		{/* <figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="https://www.kppreventsmarketing.com/wp-content/uploads/2019/11/Rounded-Rectangle-1-copy-5-450x50.png" width="450" height="50" alt="Rounded Rectangle 1 copy 5" title="Rounded Rectangle 1 copy 5"/></div>
+		</figure> */}
+     <div class="row">
+                <div class="col-md-4 mb-4 div">
+                <div class="form-outline">
+
+     <div class="form-item form-type-select form-item-gateway-country"  >
+  <label for="state" > </label>
+<select name="state" id="state" class="form-control">
+<option value="">--Select State--</option>
+<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+<option value="Assam">Assam</option>
+<option value="Bihar">Bihar</option>
+<option value="Chandigarh">Chandigarh</option>
+<option value="Chhattisgarh">Chhattisgarh</option>
+<option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+<option value="Daman and Diu">Daman and Diu</option>
+<option value="Delhi">Delhi</option>
+<option value="Lakshadweep">Lakshadweep</option>
+<option value="Puducherry">Puducherry</option>
+<option value="Goa">Goa</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Haryana">Haryana</option>
+<option value="Himachal Pradesh">Himachal Pradesh</option>
+<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+<option value="Jharkhand">Jharkhand</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Kerala">Kerala</option>
+<option value="Madhya Pradesh">Madhya Pradesh</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Manipur">Manipur</option>
+<option value="Meghalaya">Meghalaya</option>
+<option value="Mizoram">Mizoram</option>
+<option value="Nagaland">Nagaland</option>
+<option value="Odisha">Odisha</option>
+<option value="Punjab">Punjab</option>
+<option value="Rajasthan">Rajasthan</option>
+<option value="Sikkim">Sikkim</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Telangana">Telangana</option>
+<option value="Tripura">Tripura</option>
+<option value="Uttar Pradesh">Uttar Pradesh</option>
+<option value="Uttarakhand">Uttarakhand</option>
+<option value="West Bengal">West Bengal</option>
+</select>
+</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
+	<div class="wpb_single_image wpb_content_element vc_align_center">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<a href="https://www.kppreventsmarketing.com/KpprUser/" target="_self" class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="https://www.kppreventsmarketing.com/wp-content/uploads/2019/11/Button-450x50.png" width="450" height="50" alt="Button" title="Button"/></a>
+		</figure>
+	</div>
+</div></div></div></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div></div></div></div>
         <footer class="footer">
             <p class="footer-text">&copy; 2021 Created by Maza designDev</p>
           </footer>

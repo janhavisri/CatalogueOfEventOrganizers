@@ -401,3 +401,12 @@
                     font-size: 1.2rem;
                     text-align: center;
                 }
+                
+                .wpb_column {
+                    text-align: center;
+                    margin-top: 70px
+                }
+                
+                .div {
+                    margin-left: 34%
+                }
