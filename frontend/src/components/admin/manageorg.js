@@ -51,7 +51,7 @@ const ManageOrg = () => {
     if (!loading) {
       return orgData.map((org) => (
         <tr>
-          <td>{org.firstname}</td>
+          <td>{org.organisationname}</td>
           <td>{org.email}</td>
           <td>
             <button
@@ -80,7 +80,7 @@ const ManageOrg = () => {
       <table class="table align-middle mb-0 bg-white">
   <thead class="bg-light">
     <tr>
-      <th>FirstName</th>
+      <th>Orgamistion Name</th>
       <th>Email</th>
       {/* <th>Organisation Name</th> */}
     </tr>

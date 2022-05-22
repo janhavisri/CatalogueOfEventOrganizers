@@ -243,7 +243,7 @@
                 }
                 /* A container to hold the flip card and the inside page */
                 
-                .card {
+                .cardss {
                     background-color: rgba(0, 0, 0, .05);
                     box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
                     height: 15rem;
@@ -373,18 +373,18 @@
                 /* Functionality ====================================*/
                 /* This is to keep the card centered (within its container) when opened */
                 
-                .card:hover {
+                .cardss:hover {
                     box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
                     width: 30rem;
                 }
                 /* When the card is hovered, the flip card container will rotate */
                 
-                .card:hover .flip-card__container {
+                .cardss:hover .flip-card__container {
                     transform: rotateY(-180deg);
                 }
                 /* When the card is hovered, the shadow on the inside page will shrink to the left */
                 
-                .card:hover .inside-page {
+                .cardss:hover .inside-page {
                     box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
                 }
                 /* Footer ====================================*/
@@ -409,4 +409,10 @@
                 
                 .div {
                     margin-left: 34%
+                }
+                
+                .spans {
+                    font-weight: bold;
+                    color: black;
+                    font-size: 20px;
                 }

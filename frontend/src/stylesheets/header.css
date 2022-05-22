@@ -1,3 +1,8 @@
-    img {
-        margin-top: -1px;
+    .src {
+        margin-left: 31px;
+        font-size: 20px;
+    }
+    
+    .nav-item {
+        margin-right: 120px;
     }

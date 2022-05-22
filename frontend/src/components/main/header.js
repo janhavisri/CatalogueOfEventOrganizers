@@ -1,6 +1,6 @@
 import "../../stylesheets/header.css";
-const Header = () => {
-    return (
+const Header =()=>{
+  return(
     
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         
@@ -21,18 +21,14 @@ const Header = () => {
           
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
-            <a class="navbar-brand mt-2 mt-lg-0" href="#">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-                height="15"
-                alt="MDB Logo"
-                loading="lazy"
-              />
+            <a class="navbar-brand mt-2 mt-lg-0 src" href="/main/home">
+              <h3>OrganizeEasy</h3>
+              
             </a>
             
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#">Dashboard</a>
+                <a class="nav-link" href="#">Browse Org</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Team</a>
@@ -64,26 +60,13 @@ const Header = () => {
                 <i class="fas fa-bell"></i>
                 <span class="badge rounded-pill badge-notification bg-danger">1</span>
               </a>
-              <ul
-                class="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <a class="dropdown-item" href="#">Some news</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Another news</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
+              
             </div>
             
             <div class="dropdown">
               <a
                 class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                href="#"
+                href="/main/login"
                 id="navbarDropdownMenuAvatar"
                 role="button"
                 data-mdb-toggle="dropdown"
@@ -97,27 +80,13 @@ const Header = () => {
                   loading="lazy"
                 />
               </a>
-              <ul
-                class="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuAvatar"
-              >
-                <li>
-                  <a class="dropdown-item" href="#">My profile</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Settings</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Logout</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+              </div>
+              </div>
         
         </div>
         
       </nav>
     
     )
-}
+};
 export default Header;

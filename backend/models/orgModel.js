@@ -5,10 +5,12 @@ const schema = new Schema({
     firstname: String,
     lastname: String,
     organisationname: String,
+    heroimage: String,
     registeredaddress: String,
     state: String,
     city: String,
     postalcode: String,
+    description: String,
     email: String,
     link: String,
 })

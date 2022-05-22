@@ -19,7 +19,7 @@ const Home = () => {
               </h2> */}
               <div class="mt-3">
                 <a
-                  href="/main/signup"
+                  href="/main/browseorg"
                   className=" btn-get-started"
                 
                 >
@@ -51,7 +51,7 @@ const Home = () => {
 
           
             <section class="card-section">
-                <div class="card">
+                <div class="card cardss">
                   
                     <div class="flip-card">
                       
@@ -122,7 +122,7 @@ const Home = () => {
 
             
             <section class="card-section">
-                <div class="card">
+                <div class="card cardss">
                     <div class="flip-card">
                         <div class="flip-card__container">
                             <div class="card-front">
@@ -192,7 +192,7 @@ const Home = () => {
 
           
             <section class="card-section">
-                <div class="card">
+                <div class="card cardss">
                     <div class="flip-card">
                         <div class="flip-card__container">
                             <div class="card-front">
@@ -249,7 +249,7 @@ const Home = () => {
 
           
             <section class="card-section">
-                <div class="card">
+                <div class="card cardss ">
                     <div class="flip-card">
                         <div class="flip-card__container">
                             <div class="card-front">
@@ -306,7 +306,7 @@ const Home = () => {
         </section>
         <a href="/main/signup" class="inside-page__btn inside-page__btn--camping">Select Your City</a>
         <div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_empty_space"><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="genesisexpo_module_text" >
-<h3 ><span ><b>Search Events Organisers Near You</b></span></h3>
+<h3 ><span class="spans" ><b>Search Events Organisers Near You</b></span></h3>
 </div>  
 <div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
 	<div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1573475673363">
@@ -368,7 +368,7 @@ const Home = () => {
 	<div class="wpb_single_image wpb_content_element vc_align_center">
 		
 		<figure class="wpb_wrapper vc_figure">
-			<a href="https://www.kppreventsmarketing.com/KpprUser/" target="_self" class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="https://www.kppreventsmarketing.com/wp-content/uploads/2019/11/Button-450x50.png" width="450" height="50" alt="Button" title="Button"/></a>
+			<a href="/main/example" target="_self" class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="https://www.kppreventsmarketing.com/wp-content/uploads/2019/11/Button-450x50.png" width="350" height="50" alt="Button" title="Button"/></a>
 		</figure>
 	</div>
 </div></div></div></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div></div></div></div>
