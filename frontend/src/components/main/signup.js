@@ -240,11 +240,11 @@ function Signup({ setOpenSignup}){
                 </div>
               </div>
               </div>
-              <div class="form-item form-type-select form-item-gender"onChange={handleChange}
+              {/* <div class="form-item form-type-select form-item-gender"onChange={handleChange}
                   value={values.gender}>
   <label for="edit-gender" > </label>
  <select id="edit-gender" name="gender" class="form-select"><option value="" selected="selected">--Select Gender--</option><option value="male">Male</option><option value="female">Female</option><option value="other">Others</option></select>
-</div>
+</div> */}
 
               <button type="submit" class="btn btn-primary btn-block mb-3">
                 Create account
