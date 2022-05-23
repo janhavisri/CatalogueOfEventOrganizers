@@ -20,8 +20,9 @@ import BrowseOrg from "./components/main/browseorg";
 import OrgDetail from "./components/main/orgdetail";
 import Dashboard from "./components/admin/dashboard";
 import Profile from "./components/admin/profile";
-import { GoogleLogin } from 'react-google-login';
- //import { Provider } from "./Context";
+import { GoogleLogin } from "react-google-login";
+import AdminAuthorisor from "./components/adminAuth";
+//import { Provider } from "./Context";
 
 function App() {
   // const handleFailure = (result) => {
@@ -32,38 +33,45 @@ function App() {
   // };
   return (
     <div>
-    <BrowserRouter>
-    {/* < Provider>     */}
-    
-      <Routes>
-        <Route element={<Admin />} path="admin">
-          <Route element={<Dashboard />} path="dashboard" />
-          <Route element={<AddOrg />} path="addorg" />
-          {/* <Route element={<Header />} path="header" /> */}
-          <Route element={<ManageOrg />} path="manageorg" />
-          <Route element={<ManageUser />} path="manageuser" />
-          <Route element={<Profile />} path="profile" />
-          <Route element={<AdminLogin />} path="adminlogin" />
-          {/* <Route element={<Navigate to="/main/home" />} path="/" /> */}
-        </Route>
-        <Route element={<User />} path="user"></Route>
-        <Route element={<Main />} path="main">
-        <Route element={<Home/>} path="home"></Route>
-        <Route element={<Review/>} path="review"></Route>
-        <Route element={<Login/>} path="login"></Route>
-        <Route element={<Signup/>} path="signup"></Route>
-        <Route element={<AddReview/>} path="addreview"></Route>
-        <Route element={<BrowseOrg/>} path="browseorg"></Route>
-        <Route element={<OrgDetail/>} path="orgdetail/:id"></Route>
-        <Route element={<Example/>} path="example"></Route>
-        </Route>
-        <Route element={<Navigate to="/main/home" />} path="/" />
-      </Routes>
-    
-      {/* </Provider>     */}
-    </BrowserRouter>
-  
-    {/* <h1>React Google log in</h1>
+      <BrowserRouter>
+        {/* < Provider>     */}
+
+        <Routes>
+          <Route
+            element={
+              <AdminAuthorisor>
+                <Admin />
+              </AdminAuthorisor>
+            }
+            path="admin"
+          >
+            <Route element={<Dashboard />} path="dashboard" />
+            <Route element={<AddOrg />} path="addorg" />
+            {/* <Route element={<Header />} path="header" /> */}
+            <Route element={<ManageOrg />} path="manageorg" />
+            <Route element={<ManageUser />} path="manageuser" />
+            <Route element={<Profile />} path="profile" />
+            {/* <Route element={<Navigate to="/main/home" />} path="/" /> */}
+          </Route>
+          <Route element={<User />} path="user"></Route>
+          <Route element={<Main />} path="main">
+            <Route element={<AdminLogin />} path="adminlogin" />
+            <Route element={<Home />} path="home"></Route>
+            <Route element={<Review />} path="review"></Route>
+            <Route element={<Login />} path="login"></Route>
+            <Route element={<Signup />} path="signup"></Route>
+            <Route element={<AddReview />} path="addreview"></Route>
+            <Route element={<BrowseOrg />} path="browseorg"></Route>
+            <Route element={<OrgDetail />} path="orgdetail/:id"></Route>
+            <Route element={<Example />} path="example"></Route>
+          </Route>
+          <Route element={<Navigate to="/main/home" />} path="/" />
+        </Routes>
+
+        {/* </Provider>     */}
+      </BrowserRouter>
+
+      {/* <h1>React Google log in</h1>
     <div>
       <GoogleLogin>
         clientId={ProcessingInstruction.env.REACT_APP_GOOGLE_CLIENT_ID}

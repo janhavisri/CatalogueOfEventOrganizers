@@ -1,58 +1,81 @@
-const express = require('express');
-const router = express.Router();
-const Model = require('../models/reviewModel');
+const router = require("express").Router();
+const Model = require("../models/reviewModel");
 
-router.post('/add', (req, res) => {
-    let data = req.body;
+router.post("/add", (req, res) => {
+  // use req.body for reading data in post request
+  console.log(req.body);
 
-    new Model(data).save()
-        .then(() => {
-            console.log('Data Saved');
-            res.status(200).json({ message: 'success' });
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).json(err);
-        })
-})
+  new Model(req.body)
+    .save()
+    .then(() => {
+      console.log("user data saved");
+      res.status(200).json({ message: "success" });
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json(error);
+    });
+});
 
-router.get('/getall', (req, res) => {
+router.get("/getbyid/:id", (req, res) => {
+  Model.findById(req.params.id)
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
 
-    Model.find({})
-        .then((data) => {
-            console.log('data fetched');
-            res.status(200).json(data);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).json(err);
-        })
-})
+router.get("/getbyslide/:id", (req, res) => {
+  Model.find({ slide: req.params.id })
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
 
-router.get('/getbyid/:id', (req, res) => {
+router.get("/getbyuser/:id", (req, res) => {
+  Model.find({ user: req.params.id })
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
 
-    Model.findById(req.params.id)
-        .then((data) => {
-            console.log('fetched by id');
-            res.status(200).json(data);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).json(err);
-        })
-})
+router.delete("/delete/:id", (req, res) => {
+  Model.findByIdAndDelete(req.params.id)
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
 
-router.delete('/delete/:id', (req, res) => {
+router.get("/getbyuseritem/:userid/:itemid", (req, res) => {
+  Model.findOne({ user: req.params.userid, slide: req.params.itemid })
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
 
-    Model.findByIdAndDelete(req.params.id)
-        .then((data) => {
-            console.log('deleted by id');
-            res.status(200).json(data);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).json(err);
-        })
-})
+router.get("/getbyitem/:id", (req, res) => {
+  Model.find({ org: req.params.id })
+    .populate("user")
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;

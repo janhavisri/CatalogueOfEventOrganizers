@@ -1,11 +1,13 @@
-const mongoose = require('../connection');
-const Schema = mongoose.Schema;
+const mongoose = require("../connection");
 
-const schema = new Schema({
-    description: String,
+const schema = new mongoose.Schema({
+  rating: Number,
+  text: String,
+  user: { type: mongoose.Types.ObjectId, ref: "users" },
+  org: { type: mongoose.Types.ObjectId, ref: "organisation" },
+  createdAt: Date,
+});
 
-})
-
-const model = mongoose.model('review', schema);
+const model = mongoose.model("reviews", schema);
 
 module.exports = model;
