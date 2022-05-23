@@ -1,6 +1,50 @@
 import "../../stylesheets/adminlogin.css";
+import app_config from "../../config";
+import Swal from 'sweetalert2';
+import { Formik } from 'formik';
+import React,{useState} from 'react';
 const Login =()=>{
-    return(
+
+  const url = app_config.api_url;
+  const loginform = {
+    email: '',
+    password: ''
+}
+
+const formSubmit = (values) => {
+
+    fetch(url + 'adminuser/getbyemail/' + values.email)
+        .then(res => res.json())
+        .then(data => {
+            if (data) {
+                console.log(data);
+
+                if (data.password == values.password) {
+                    console.log('login success');
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Login Success',
+                    })
+
+                    sessionStorage.setItem('user', JSON.stringify(data));
+                    window.location.replace('./manageuser');
+
+                    return
+                }
+            }
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Email or Password Incorrect'
+            })
+
+        })
+
+
+}
+
+return(
         <div class="whole">
         <div class="container contain">
         <div class="row">
@@ -10,17 +54,32 @@ const Login =()=>{
                         <h3 class="pt-3 font-weight-bold">Login</h3>
                     </div>
                     <div class="panel-body p-3">
-                        <form action="login_script.php" method="POST">
+                    <Formik
+                     initialValues={loginform}
+                     onSubmit={formSubmit}
+                 >{({
+                     values,
+                     handleChange,
+                     handleSubmit
+                 }) => (
+                     <form onSubmit={handleSubmit} class="mb-3">
+                        {/* <form action="login_script.php" method="POST"> */}
                             <div class="form-group py-2">
                                 <div class="input-field">
                                     <span class="far fa-user p-2"></span>
-                                    <input  class="text"type="text" placeholder="Username or Email" required/>
+                                    <input  type="email"
+            class="form-control"
+            placeholder="example@gmail.com"
+            id="email" onChange={handleChange} value={values.email} required/>
                                 </div>
                             </div>
                             <div class="form-group py-1 pb-2">
                                 <div class="input-field">
                                     <span class="fas fa-lock px-2"></span>
-                                    <input class="text"type="password" placeholder="Enter your Password" required/>
+                                    <input type="password"
+            class="form-control"
+            placeholder="password"
+            id="password" onChange={handleChange} value={values.password}required/>
                                     <button class="btn bg-white text-muted">
                                         <span class="far fa-eye-slash"></span>
                                     </button>
@@ -31,10 +90,17 @@ const Login =()=>{
                                 <label for="remember" class="text-muted">Remember me</label>
                                 <a href="#" id="forgot" class="font-weight-bold">Forgot password?</a>
                             </div>
-                            <div class="btn btn-primary btn-block mt-3">Login</div>
+                            <button type="submit" class="btn btn-primary btn-block">
+          Login
+        </button>
+                            {/* <div class="btn btn-primary btn-block mt-3" type="submit">Login</div> */}
                             <div class="text-center pt-4 text-muted">Don't have an account? <a href="#">Sign up</a>
                             </div>
-                        </form>
+                            </form>
+    )}
+
+
+    </Formik>
                     </div>
 
                     </div>

@@ -27,7 +27,7 @@ const formSubmit = (values) => {
                     })
 
                     sessionStorage.setItem('user', JSON.stringify(data));
-                    window.location.replace('./userdashboard');
+                    window.location.replace('./browseorg');
 
                     return
                 }

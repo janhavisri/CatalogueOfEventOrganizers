@@ -12,6 +12,7 @@ import ManageUser from "./components/admin/manageuser";
 import User from "./components/user";
 import Main from "./components/main";
 import Home from "./components/main/home";
+import Review from "./components/main/review";
 import Signup from "./components/main/signup";
 import Example from "./components/main/example";
 import AddReview from "./components/main/addreview";
@@ -20,7 +21,7 @@ import OrgDetail from "./components/main/orgdetail";
 import Dashboard from "./components/admin/dashboard";
 import Profile from "./components/admin/profile";
 import { GoogleLogin } from 'react-google-login';
-// import { OrgProvider } from "./context";
+ //import { Provider } from "./Context";
 
 function App() {
   // const handleFailure = (result) => {
@@ -32,21 +33,23 @@ function App() {
   return (
     <div>
     <BrowserRouter>
-    {/* <OrgProvider>     */}
+    {/* < Provider>     */}
     
       <Routes>
         <Route element={<Admin />} path="admin">
           <Route element={<Dashboard />} path="dashboard" />
           <Route element={<AddOrg />} path="addorg" />
-          <Route element={<Header />} path="header" />
+          {/* <Route element={<Header />} path="header" /> */}
           <Route element={<ManageOrg />} path="manageorg" />
           <Route element={<ManageUser />} path="manageuser" />
           <Route element={<Profile />} path="profile" />
           <Route element={<AdminLogin />} path="adminlogin" />
+          {/* <Route element={<Navigate to="/main/home" />} path="/" /> */}
         </Route>
         <Route element={<User />} path="user"></Route>
         <Route element={<Main />} path="main">
         <Route element={<Home/>} path="home"></Route>
+        <Route element={<Review/>} path="review"></Route>
         <Route element={<Login/>} path="login"></Route>
         <Route element={<Signup/>} path="signup"></Route>
         <Route element={<AddReview/>} path="addreview"></Route>
@@ -54,11 +57,12 @@ function App() {
         <Route element={<OrgDetail/>} path="orgdetail/:id"></Route>
         <Route element={<Example/>} path="example"></Route>
         </Route>
-        {/* <Navigate to="/main/home" /> */}
-      
+        <Route element={<Navigate to="/main/home" />} path="/" />
       </Routes>
-      {/* </OrgProvider>     */}
+    
+      {/* </Provider>     */}
     </BrowserRouter>
+  
     {/* <h1>React Google log in</h1>
     <div>
       <GoogleLogin>

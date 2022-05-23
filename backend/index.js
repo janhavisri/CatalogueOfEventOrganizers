@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const userRouter = require('./routers/userRouter');
+const adminuserRouter = require('./routers/adminuserRouter');
 const orgRouter = require('./routers/orgRouter');
 const reviewRouter = require('./routers/reviewRouter');
 const utilRouter = require('./routers/utils');
@@ -11,6 +12,7 @@ app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(express.static('./static/uploads'));
 
 app.use('/user', userRouter);
+app.use('/adminuser', adminuserRouter);
 app.use('/org', orgRouter);
 app.use('/review', reviewRouter);
 app.use('/util', utilRouter);

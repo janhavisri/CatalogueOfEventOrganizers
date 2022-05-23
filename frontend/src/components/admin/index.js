@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../sidebar";
 import { AccountCircle, Dashboard } from "@mui/icons-material";
-//import Header from "./header.js";
+import Header from "./header.js";
 const Admin = () => {
   
 
@@ -10,7 +10,7 @@ const Admin = () => {
     <div>
       {/* <h1>Admin</h1> */}
       {/* <Sidebar sidebarOptions={sidebarOptions} title="Admin Dashboard"> */}
-      {/* <Header></Header> */}
+      <Header></Header>
         <Outlet />
       {/* </Sidebar> */}
     </div>

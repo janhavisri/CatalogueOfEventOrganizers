@@ -1,9 +1,12 @@
-import { Avatar, Rating, TextField } from "@mui/material";
+import { Avatar, Rating, TextField, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import app_config from "../../config";
 import "../../stylesheets/orgdetail.css";
+import { Formik } from "formik";
+ import Swal from "sweetalert2";
+ 
 
 const PPTViewer = () => {
   const [pptLink, setPptLink] = useState(
@@ -15,10 +18,12 @@ const PPTViewer = () => {
   const { id } = useParams();
   const [orgData, setOrgData] = useState(null);
   const [loading, setLoading] = useState(true);
-
   const [orgList, setOrgList] = useState([]);
+  const [hero, setHero] = useState("");
+  const [ReviewFile, setReviewFile] = useState("");
   const [orgLoading, setOrgLoading] = useState(true);
   const [orgText, setOrgText] = useState("");
+  const [dataList, setDataList] = useState([]);
   const url = app_config.api_url;
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user"))
@@ -41,7 +46,35 @@ const PPTViewer = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  const reviewform = {
+ 
+    description: "",
+    
 
+  };
+  const formSubmit = (values) => {
+    console.log(values);
+    values.heroimage = hero;
+    values.file = ReviewFile;
+
+    const reqOp = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    };
+    fetch(url + "review/add", reqOp)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+
+      if (data.message == "success") {
+        Swal.fire({
+          icon: "success",
+          title: "Added Successfully!!",
+        });
+      }
+    });
+};
   const fetchRatings = (org_id) => {
     fetch(url + "org/getbyitem/" + org_id).then((res) => {
       if (res.status === 200) {
@@ -87,7 +120,46 @@ const PPTViewer = () => {
       ));
     }
   };
+const disData=()=>{
+  if (!loading) {
+    return dataList.map(
+      ({
+        description,
+        _id,
+      }) => (<div key={_id} class="col-md-12 col-lg-4 mb-4 mb-lg-0 ">
+      <div class='container contd' id='container'>
+  <div class='card-wrapper'>
+    <div class='arrow' id='previous'><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+    <div class='arrow' id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+    <div class='main-window' id='main-window'>
 
+      <p class="small">
+                    <a href="#!" class="text-muted">
+                      {description}
+                    </a>
+                  </p>
+
+      </div>
+        
+      <Button onClick={e=>navigate("/main/review/" )} variant="contained">Click For Full Details</Button>
+      return <div style={{ background: "#eee" }}>
+    {/* <img class="banner" src="https://events.mygov.in/sites/all/themes/mygov/images/inner-banner.jpg"></img> */}
+    <div className="container">
+        <div className="row disdata">{disData()}</div>
+      </div>
+    </div>
+      </div>
+    </div>
+    </div> 
+      // </div>
+      // </div>
+      // </div>
+      // </div>
+  
+        )
+      );
+    }
+  };
  
   const displayData = () => {
     if (!loading) {
@@ -124,13 +196,17 @@ const PPTViewer = () => {
                       {orgData.email}
                     </h6>
                   </p>
-                <p class="w3-left"><button class="w3-btn w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
-                <p class="w3-right"><button class="w3-btn" onclick="myFunction('demo1')" id="myBtn"><b>Add Review  </b> <span class="w3-tag w3-white">1</span></button></p></div>
+                {/* <p class="w3-left"><button class="w3-btn w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p> */}
+                {/* <p class="w3-right"><button class="w3-btn" onclick={e=>navigate("/main/review/" )} id="myBtn"><b>All Review  </b> <span class="w3-tag w3-white"></span></button></p> */}
+                </div>
                </div> 
                <div class="review">
                <h4 className="text-muted">Review</h4>
                 <hr />
                 <Rating name="simple-controlled" value={4} />
+                <Formik initialValues={reviewform} onSubmit={formSubmit}>
+                 {({ values, handleChange, handleSubmit }) => (
+                   <form onSubmit={handleSubmit}>
                 <TextField
                   label="Write Something .."
                   fullWidth
@@ -143,10 +219,13 @@ const PPTViewer = () => {
                 <button
                   className="btn btn-primary mt-1 float-end "
                   // onClick={addRating}
-                  onClick={e=>navigate("/main/browsereview/" )} 
+                  onClick={e=>navigate("/main/review/" )} 
                 >
                   Submit Review
                 </button>
+                </form>
+                 )}
+                 </Formik>
               </div>
             </div>
            </div>}
@@ -160,5 +239,7 @@ const PPTViewer = () => {
     </div>
     ;
 };
+
+
 
 export default PPTViewer;

@@ -2,7 +2,9 @@ import React from "react";
 import "../../stylesheets/home.css"
 import web from "../../images/img3.png";
 const Home = () => {
+    
     return ( 
+        
         <div className="head"> <section id="header" className="d-flex align-items-center first">
     <div class="container-fluid nav_bg">
       <div class="row">
@@ -373,7 +375,7 @@ const Home = () => {
 	</div>
 </div></div></div></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div></div></div></div>
         <footer class="footer">
-            <p class="footer-text">&copy; 2021 Created by Maza designDev</p>
+            <p class="footer-text">&copy; 2022 OrganiseEasy</p>
           </footer>
     </main>
   </div>
