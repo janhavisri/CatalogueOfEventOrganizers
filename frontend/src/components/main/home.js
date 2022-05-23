@@ -306,9 +306,15 @@ const Home = () => {
             </section>
             
         </section>
-        <a href="/main/signup" class="inside-page__btn inside-page__btn--camping">Select Your City</a>
-        <div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_empty_space"><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="genesisexpo_module_text" >
-<h3 ><span class="spans" ><b>Search Events Organisers Near You</b></span></h3>
+        {/* <a href="/main/signup" class="inside-page__btn inside-page__btn--camping">Select Your City</a> */}
+        <div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner ">
+            <div class="wpb_wrapper"><div class="vc_empty_space"><span class="vc_empty_space_inner"></span></div>
+            <div class="vc_empty_space" >
+                <span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" >
+                    <span class="vc_empty_space_inner"></span></div>
+            <div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div>
+            <div class="genesisexpo_module_text" >
+{/* <h3 ><span class="spans" ><b>Search Events Organisers Near You</b></span></h3> */}
 </div>  
 <div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
 	<div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1573475673363">
@@ -316,7 +322,7 @@ const Home = () => {
 		{/* <figure class="wpb_wrapper vc_figure">
 			<div class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="https://www.kppreventsmarketing.com/wp-content/uploads/2019/11/Rounded-Rectangle-1-copy-5-450x50.png" width="450" height="50" alt="Rounded Rectangle 1 copy 5" title="Rounded Rectangle 1 copy 5"/></div>
 		</figure> */}
-     <div class="row">
+     {/* <div class="row">
                 <div class="col-md-4 mb-4 div">
                 <div class="form-outline">
 
@@ -364,16 +370,17 @@ const Home = () => {
 </div>
 	</div>
 	</div>
-	</div>
+	</div> */}
 	</div>
 
-	<div class="wpb_single_image wpb_content_element vc_align_center">
+	{/* <div class="wpb_single_image wpb_content_element vc_align_center">
 		
 		<figure class="wpb_wrapper vc_figure">
 			<a href="/main/example" target="_self" class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="https://www.kppreventsmarketing.com/wp-content/uploads/2019/11/Button-450x50.png" width="350" height="50" alt="Button" title="Button"/></a>
 		</figure>
-	</div>
-</div></div></div></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div></div></div></div>
+	</div> */}
+</div></div></div></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span></div><div class="vc_empty_space" ><span class="vc_empty_space_inner"></span>
+</div></div></div></div>
         <footer class="footer">
             <p class="footer-text">&copy; 2022 OrganiseEasy</p>
           </footer>
