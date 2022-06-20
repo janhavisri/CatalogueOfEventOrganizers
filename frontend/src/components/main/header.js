@@ -20,11 +20,11 @@ const Header =()=>{
     if (currentUser) {
       return (
         <>
-                    {/* <li className="nav-item">
-            <Link className="nav-link" to="/main/addreview">
-              Add Review
+                    <ul className="nav-item">
+            <Link className="nav-link" to="/main/adminlogin">
+              Admin Login
             </Link>
-          </li> */}
+          </ul>
           <ul className="nav-item">
               <button onClick={logout} className="btn btn-danger">
                 Logout

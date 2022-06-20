@@ -26,7 +26,7 @@ const Login = () => {
             });
 
             sessionStorage.setItem("admin", JSON.stringify(data));
-            window.location.replace("./manageuser");
+            window.location.replace("/admin/manageuser");
 
             return;
           }
